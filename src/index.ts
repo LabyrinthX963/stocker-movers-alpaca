@@ -69,7 +69,15 @@ function formatSigned(n: number, decimals = 2): string {
 
 // เตรียมข้อความพร้อมส่งเข้า telegram 
 function buildMessage(movers: Mover[], assets: Map<string, Asset>): string {
-  const header = `📈 หุ้น US บวกแรง (${movers.length} ตัว)\n\n`;
+  const nowTH = new Date().toLocaleString("th-TH", {
+    timeZone: "Asia/Bangkok",
+    day: "2-digit",
+    month: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }) + " น.";
+  const header = `📈 หุ้น US บวกแรง (${movers.length} ตัว ${nowTH})\n\n`;
   const lines: string[] = [];
   let total = header.length;
   let shown = 0;
