@@ -147,5 +147,5 @@ const app = new Elysia()
 app.listen(7101);
 
 console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
+  `Movers API is Running🚀`
 );
